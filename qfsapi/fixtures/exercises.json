@@ -1,0 +1,20 @@
+[
+  {
+    "model": "qfsapi.exercise",
+    "pk": 1,
+    "fields": {
+      "name": "Exercise 1",
+      "description": "Exercise 1 description",
+      "gif": "https://giphy.com/clips/theoffice-3rS8HpFMbQzQ7p925V"
+    }
+  },
+  {
+    "model": "qfsapi.exercise",
+    "pk": 2,
+    "fields": {
+      "name": "Exercise 2",
+      "description": "Exercise 2 description",
+      "gif": "https://giphy.com/clips/theoffice-3rS8HpFMbQzQ7p925V"
+    }
+  }
+]

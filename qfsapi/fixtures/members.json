@@ -1,0 +1,16 @@
+[
+  {
+    "model": "qfsapi.member",
+    "pk": 1,
+    "fields": {
+      "user": 1
+    }
+  },
+  {
+    "model": "qfsapi.member",
+    "pk": 2,
+    "fields": {
+      "user": 2
+    }
+  }
+]

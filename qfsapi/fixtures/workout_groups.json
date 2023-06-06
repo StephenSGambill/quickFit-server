@@ -1,0 +1,18 @@
+[
+  {
+    "model": "qfsapi.workoutgroup",
+    "pk": 1,
+    "fields": {
+      "name": "Upper body",
+      "exercise": 1
+    }
+  },
+  {
+    "model": "qfsapi.workoutgroup",
+    "pk": 2,
+    "fields": {
+      "name": "Lower body",
+      "exercise": 2
+    }
+  }
+]
