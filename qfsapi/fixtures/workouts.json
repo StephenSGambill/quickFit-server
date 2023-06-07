@@ -3,18 +3,40 @@
     "model": "qfsapi.workout",
     "pk": 1,
     "fields": {
-      "name": "Workout 1",
+      "name": "Upper Body Blast",
       "description": "Description 1",
-      "workout_group": 1
+      "workout_group": 1,
+      "exercises": [1]
     }
   },
   {
     "model": "qfsapi.workout",
     "pk": 2,
     "fields": {
-      "name": "Workout 2",
+      "name": "Lower Body Blast",
       "description": "Description 2",
-      "workout_group": 2
+      "workout_group": 2,
+      "exercises": [2]
+    }
+  },
+  {
+    "model": "qfsapi.workout",
+    "pk": 3,
+    "fields": {
+      "name": "Full Body Blast",
+      "description": "Description 3",
+      "workout_group": 3,
+      "exercises": [1, 2, 3]
+    }
+  },
+  {
+    "model": "qfsapi.workout",
+    "pk": 4,
+    "fields": {
+      "name": "Cardio Blast",
+      "description": "Description 4",
+      "workout_group": 3,
+      "exercises": [4]
     }
   }
 ]
