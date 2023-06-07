@@ -3,18 +3,40 @@
     "model": "qfsapi.exercise",
     "pk": 1,
     "fields": {
-      "name": "Exercise 1",
+      "name": "Push Ups",
       "description": "Exercise 1 description",
-      "gif": "https://giphy.com/clips/theoffice-3rS8HpFMbQzQ7p925V"
+      "gif": "https://giphy.com/clips/theoffice-3rS8HpFMbQzQ7p925V",
+      "workout_group": 1
     }
   },
   {
     "model": "qfsapi.exercise",
     "pk": 2,
     "fields": {
-      "name": "Exercise 2",
+      "name": "Squats",
       "description": "Exercise 2 description",
-      "gif": "https://giphy.com/clips/theoffice-3rS8HpFMbQzQ7p925V"
+      "gif": "https://giphy.com/clips/theoffice-3rS8HpFMbQzQ7p925V",
+      "workout_group": 2
+    }
+  },
+  {
+    "model": "qfsapi.exercise",
+    "pk": 3,
+    "fields": {
+      "name": "Burpee",
+      "description": "Exercise 3 description",
+      "gif": "https://giphy.com/clips/theoffice-3rS8HpFMbQzQ7p925V",
+      "workout_group": 3
+    }
+  },
+  {
+    "model": "qfsapi.exercise",
+    "pk": 4,
+    "fields": {
+      "name": "Running",
+      "description": "Exercise 3 description",
+      "gif": "https://giphy.com/clips/theoffice-3rS8HpFMbQzQ7p925V",
+      "workout_group": 4
     }
   }
 ]
