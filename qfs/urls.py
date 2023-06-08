@@ -37,4 +37,9 @@ urlpatterns = [
     path("login", login_user),
     path("admin/", admin.site.urls),
     path("", include(router.urls)),
+    path(
+        "workouts/complete/<int:pk>",
+        WorkoutView.as_view({"post": "complete"}),
+        name="complete_workout",
+    ),
 ]

@@ -51,3 +51,26 @@ class WorkoutView(ViewSet):
                 {"message": "No completed workouts."},
                 status=status.HTTP_404_NOT_FOUND,
             )
+
+    @action(detail=True, methods=["post"], url_path="complete/")
+    def complete(self, request, pk):
+        """Save current workout as complete for member"""
+
+        try:
+            member = Member.objects.get(user=request.auth.user)
+            workout = Workout.objects.get(pk=pk)
+            completed_workout = CompletedWorkout.objects.create(
+                member=member, workout=workout
+            )
+            completed_workout.save()
+            return Response({"message": "Workout marked as complete"})
+
+        except Member.DoesNotExist:
+            return Response(
+                {"message": "Member not found"}, status=status.HTTP_404_NOT_FOUND
+            )
+
+        except Workout.DoesNotExist:
+            return Response(
+                {"message": "Workout not found"}, status=status.HTTP_404_NOT_FOUND
+            )
