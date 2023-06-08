@@ -35,7 +35,17 @@
     "fields": {
       "name": "Cardio Blast",
       "description": "Description 4",
-      "workout_group": 3,
+      "workout_group": 4,
+      "exercises": [4]
+    }
+  },
+  {
+    "model": "qfsapi.workout",
+    "pk": 5,
+    "fields": {
+      "name": "Cardio Strong",
+      "description": "Description 5",
+      "workout_group": 4,
       "exercises": [4]
     }
   }
