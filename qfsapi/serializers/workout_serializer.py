@@ -9,16 +9,16 @@ class WorkoutGroupSerializer(serializers.ModelSerializer):
         fields = ("id", "name", "exercise")
 
 
-class ExerciseSerializer(serializers.ModelSerializer):
+class WorkoutExerciseSerializer(serializers.ModelSerializer):
     class Meta:
         model = Exercise
-        fields = ("id", "name", "description")
+        fields = ("id", "name", "description", "gif", "duration", "rest", "iterations")
 
 
 class WorkoutSerializer(serializers.ModelSerializer):
     """JSON serializer for members"""
 
-    exercises = ExerciseSerializer(many=True)
+    exercises = WorkoutExerciseSerializer(many=True)
 
     class Meta:
         model = Workout

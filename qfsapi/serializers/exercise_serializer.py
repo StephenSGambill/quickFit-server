@@ -8,4 +8,14 @@ class ExerciseSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Exercise
-        fields = ("id", "name", "description", "gif")
+        fields = (
+            "id",
+            "name",
+            "description",
+            "gif",
+            "workout_group",
+            "duration",
+            "rest",
+            "iterations",
+        )
+        depth = 1
