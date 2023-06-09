@@ -46,35 +46,6 @@ class CustomWorkoutView(ViewSet):
         serializer = CustomWorkoutSerializer(custom_workouts, many=False)
         return Response(serializer.data, status=status.HTTP_200_OK)
 
-    def destroy(self, request, pk=None):
-        """Handle DELETE requests to delete a workout"""
-        try:
-            custom_workout = CustomWorkout.objects.get(pk=pk)
-            member = Member.objects.get(user_id=request.auth.user)
-            workout = Workout.objects.get(pk=custom_workout.workout_id)
-
-            if custom_workout.member_id == member.id:
-                custom_workout.delete()
-                workout.exercises.clear()
-                workout.delete()
-
-                return Response(
-                    {"message": "Custom workout deleted."},
-                    status=status.HTTP_204_NO_CONTENT,
-                )
-            else:
-                return Response(
-                    {
-                        "message": "You do not have permission to delete this custom workout."
-                    },
-                    status=status.HTTP_403_FORBIDDEN,
-                )
-        except CustomWorkout.DoesNotExist:
-            return Response(
-                {"message": "Custom workout not found"},
-                status=status.HTTP_404_NOT_FOUND,
-            )
-
     def create(self, request):
         workout_group_id = request.data["workout_group"]
         workout_group = WorkoutGroup.objects.get(id=workout_group_id)
@@ -125,6 +96,35 @@ class CustomWorkoutView(ViewSet):
                 return Response(
                     {
                         "message": "You do not have permission to update this custom workout."
+                    },
+                    status=status.HTTP_403_FORBIDDEN,
+                )
+        except CustomWorkout.DoesNotExist:
+            return Response(
+                {"message": "Custom workout not found"},
+                status=status.HTTP_404_NOT_FOUND,
+            )
+
+    def destroy(self, request, pk=None):
+        """Handle DELETE requests to delete a workout"""
+        try:
+            custom_workout = CustomWorkout.objects.get(pk=pk)
+            member = Member.objects.get(user_id=request.auth.user)
+            workout = Workout.objects.get(pk=custom_workout.workout_id)
+
+            if custom_workout.member_id == member.id:
+                custom_workout.delete()
+                workout.exercises.clear()
+                workout.delete()
+
+                return Response(
+                    {"message": "Custom workout deleted."},
+                    status=status.HTTP_204_NO_CONTENT,
+                )
+            else:
+                return Response(
+                    {
+                        "message": "You do not have permission to delete this custom workout."
                     },
                     status=status.HTTP_403_FORBIDDEN,
                 )

@@ -3,7 +3,7 @@ from django.http import HttpResponseServerError
 from rest_framework.viewsets import ViewSet
 from rest_framework.response import Response
 from rest_framework import serializers, status
-from qfsapi.models import Member, Workout, CompletedWorkout, WorkoutGroup
+from qfsapi.models import Member, Workout, CompletedWorkout, WorkoutGroup, Exercise
 from django.contrib.auth.models import User
 from qfsapi.serializers import (
     MemberSerializer,
@@ -37,6 +37,47 @@ class WorkoutView(ViewSet):
         workout = Workout.objects.get(pk=pk)
         serializer = WorkoutSerializer(workout, many=False)
         return Response(serializer.data, status=status.HTTP_200_OK)
+
+    def create(self, request):
+        """Handle POST requests to create a new workout"""
+        workout_group_id = request.data.get("workout_group")
+        workout_group = WorkoutGroup.objects.get(id=workout_group_id)
+
+        try:
+            workout = Workout.objects.create(
+                name=request.data.get("name"),
+                description=request.data.get("description"),
+                workout_group=workout_group,
+            )
+
+            exercise_ids = request.data.get("exercises", [])
+            exercises = Exercise.objects.filter(id__in=exercise_ids)
+            workout.exercises.set(exercises)
+            serializer = WorkoutSerializer(workout)
+
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        except WorkoutGroup.DoesNotExist:
+            return Response(
+                {"message": "Workout Group not found."},
+                status=status.HTTP_404_NOT_FOUND,
+            )
+
+    def update(self, request, pk=None):
+        """Handle PUT requests to update a workout"""
+        try:
+            workout = Workout.objects.get(pk=pk)
+            serializer = WorkoutSerializer(workout, data=request.data)
+
+            if serializer.is_valid():
+                serializer.save()
+                return Response(serializer.data, status=status.HTTP_200_OK)
+
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+        except Workout.DoesNotExist:
+            return Response(
+                {"message": "Workout not found"}, status=status.HTTP_404_NOT_FOUND
+            )
 
     def destroy(self, request, pk=None):
         """Handle DELETE requests to delete a workout"""
