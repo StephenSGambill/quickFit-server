@@ -3,32 +3,28 @@
     "model": "qfsapi.workoutgroup",
     "pk": 1,
     "fields": {
-      "name": "Upper body",
-      "exercise": 1
+      "name": "Upper body"
     }
   },
   {
     "model": "qfsapi.workoutgroup",
     "pk": 2,
     "fields": {
-      "name": "Lower body",
-      "exercise": 2
+      "name": "Lower body"
     }
   },
   {
     "model": "qfsapi.workoutgroup",
     "pk": 3,
     "fields": {
-      "name": "Full body",
-      "exercise": 2
+      "name": "Full body"
     }
   },
   {
     "model": "qfsapi.workoutgroup",
     "pk": 4,
     "fields": {
-      "name": "Cardio",
-      "exercise": 2
+      "name": "Cardio"
     }
   }
 ]
