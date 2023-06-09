@@ -14,4 +14,5 @@ class CustomWorkoutSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = CustomWorkout
-        fields = ("id", "member", "workout")
+        fields = ("id", "workout")
+        depth = 2
