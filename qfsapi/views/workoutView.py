@@ -38,6 +38,18 @@ class WorkoutView(ViewSet):
         serializer = WorkoutSerializer(workout, many=False)
         return Response(serializer.data, status=status.HTTP_200_OK)
 
+    def destroy(self, request, pk=None):
+        """Handle DELETE requests to delete a workout"""
+
+        try:
+            workout = Workout.objects.get(pk=pk)
+            workout.delete()
+            return Response(status=status.HTTP_204_NO_CONTENT)
+        except Workout.DoesNotExist:
+            return Response(
+                {"message": "Workout not found"}, status=status.HTTP_404_NOT_FOUND
+            )
+
     @action(detail=True, methods=["post"], url_path="complete")
     def complete(self, request, pk):
         """Save current workout as complete for member"""
