@@ -97,3 +97,39 @@ class CustomWorkoutView(ViewSet):
 
         serializer = CustomWorkoutSerializer(new_custom_workout, many=False)
         return Response(serializer.data, status=status.HTTP_201_CREATED)
+
+    def update(self, request, pk=None):
+        """Handle PUT requests to update an existing custom workout"""
+
+        try:
+            custom_workout = CustomWorkout.objects.get(pk=pk)
+            member = Member.objects.get(user=request.auth.user)
+
+            if custom_workout.member_id == member.id:
+                workout_group_id = request.data["workout_group"]
+                workout_group = WorkoutGroup.objects.get(id=workout_group_id)
+
+                workout = custom_workout.workout
+                workout.name = request.data["name"]
+                workout.description = request.data["description"]
+                workout.workout_group = workout_group
+                workout.save()
+
+                exercise_ids = request.data.get("exercises", [])
+                exercises = Exercise.objects.filter(id__in=exercise_ids)
+                workout.exercises.set(exercises)
+
+                serializer = CustomWorkoutSerializer(custom_workout, many=False)
+                return Response(serializer.data, status=status.HTTP_200_OK)
+            else:
+                return Response(
+                    {
+                        "message": "You do not have permission to update this custom workout."
+                    },
+                    status=status.HTTP_403_FORBIDDEN,
+                )
+        except CustomWorkout.DoesNotExist:
+            return Response(
+                {"message": "Custom workout not found"},
+                status=status.HTTP_404_NOT_FOUND,
+            )
