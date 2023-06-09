@@ -34,3 +34,15 @@ class CompletedWorkoutView(ViewSet):
         custom_workouts = CompletedWorkout.objects.filter(member=request.auth.user.id)
         serializer = CompletedWorkoutSerializer(custom_workouts, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
+
+    def create(self, request):
+        member = Member.objects.get(user=request.auth.user)
+        workout = Workout.objects.get(id=request.data["workout"])
+
+        new_completed_workout = CompletedWorkout.objects.create(
+            member=member,
+            workout=workout,
+        )
+
+        serializer = CompletedWorkoutSerializer(new_completed_workout, many=False)
+        return Response(serializer.data, status=status.HTTP_201_CREATED)
