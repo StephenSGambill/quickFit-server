@@ -3,11 +3,9 @@ from django.http import HttpResponseServerError
 from rest_framework.viewsets import ViewSet
 from rest_framework.response import Response
 from rest_framework import serializers, status
-from qfsapi.models import Member, Workout, Exercise, WorkoutGroup
+from qfsapi.models import Exercise, WorkoutGroup
 from django.contrib.auth.models import User
 from qfsapi.serializers import (
-    MemberSerializer,
-    WorkoutSerializer,
     ExerciseSerializer,
     NewExerciseSerializer,
 )

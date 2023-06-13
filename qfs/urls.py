@@ -25,6 +25,7 @@ from qfsapi.views import (
     ExerciseView,
     CustomWorkoutView,
     CompletedWorkoutView,
+    WorkoutGroupView,
 )
 from rest_framework import routers
 
@@ -34,6 +35,8 @@ router.register(r"workouts", WorkoutView, "workout")
 router.register(r"exercises", ExerciseView, "exercise")
 router.register(r"customworkouts", CustomWorkoutView, "customworkout")
 router.register(r"completedworkouts", CompletedWorkoutView, "completedworkout")
+router.register(r"workoutgroups", WorkoutGroupView, "workoutgroup")
+
 
 urlpatterns = [
     path("register", register_user),

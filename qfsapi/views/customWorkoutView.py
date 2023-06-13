@@ -6,17 +6,13 @@ from rest_framework import serializers, status
 from qfsapi.models import (
     Member,
     Workout,
-    CompletedWorkout,
     WorkoutGroup,
     CustomWorkout,
     Exercise,
 )
 from django.contrib.auth.models import User
 from qfsapi.serializers import (
-    MemberSerializer,
-    WorkoutSerializer,
-    CompletedWorkoutSerializer,
-    CustomWorkoutSerializer,
+    CustomWorkoutSerializer
 )
 from rest_framework.decorators import action
 

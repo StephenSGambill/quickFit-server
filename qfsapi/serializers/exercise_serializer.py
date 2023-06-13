@@ -1,6 +1,5 @@
 from rest_framework import serializers
-from qfsapi.models import Workout, WorkoutGroup, Exercise
-from django.contrib.auth.models import User
+from qfsapi.models import Exercise
 
 
 class ExerciseSerializer(serializers.ModelSerializer):
