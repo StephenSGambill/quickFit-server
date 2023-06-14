@@ -9,6 +9,7 @@ from qfsapi.serializers import (
     WorkoutSerializer,
     CompletedWorkoutSerializer,
     WorkoutGroupSerializer,
+    ExerciseSerializer,
 )
 from rest_framework.decorators import action
 
@@ -25,4 +26,24 @@ class WorkoutGroupView(ViewSet):
 
         workout_groups = WorkoutGroup.objects.all()
         serializer = WorkoutGroupSerializer(workout_groups, many=True)
+        return Response(serializer.data, status=status.HTTP_200_OK)
+
+    def retrieve(self, request, pk=None):
+        """Handle GET requests to retrieve a specific workout group
+
+        Args:
+            request (object): Django request object
+            pk (int): Primary key of the workout group to retrieve
+
+        Returns:
+            Response -- JSON serialized workout group
+        """
+        try:
+            workout_group = WorkoutGroup.objects.get(pk=pk)
+        except WorkoutGroup.DoesNotExist:
+            return Response(status=status.HTTP_404_NOT_FOUND)
+
+        # Fetch exercises belonging to the workout group
+        exercises = Exercise.objects.filter(workout_group=workout_group)
+        serializer = ExerciseSerializer(exercises, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)

@@ -4,8 +4,8 @@
     "pk": 1,
     "fields": {
       "name": "Push Ups",
-      "description": "Exercise 1 description",
-      "gif": "https://giphy.com/clips/theoffice-3rS8HpFMbQzQ7p925V",
+      "description": "A push-up is a popular bodyweight exercise that primarily targets the upper body muscles, especially the chest, shoulders, and triceps. It also engages the core muscles, including the abs and lower back, as stabilizers.",
+      "gif": "https://media.giphy.com/media/YsxTT1XmQqjxrK7No6/giphy.gif",
       "workout_group": 1
     }
   },
@@ -15,7 +15,7 @@
     "fields": {
       "name": "Squats",
       "description": "Exercise 2 description",
-      "gif": "https://giphy.com/clips/theoffice-3rS8HpFMbQzQ7p925V",
+      "gif": "https://thumbs.gfycat.com/BitterFoolishHalcyon-max-1mb.gif",
       "workout_group": 2
     }
   },
@@ -25,7 +25,7 @@
     "fields": {
       "name": "Burpee",
       "description": "Exercise 3 description",
-      "gif": "https://giphy.com/clips/theoffice-3rS8HpFMbQzQ7p925V",
+      "gif": "https://media.tenor.com/u2-VJiigKCkAAAAC/exercise-jump.gif",
       "workout_group": 3
     }
   },
@@ -35,7 +35,7 @@
     "fields": {
       "name": "Running",
       "description": "Exercise 3 description",
-      "gif": "https://giphy.com/clips/theoffice-3rS8HpFMbQzQ7p925V",
+      "gif": "https://artimg.gympik.com/articles/wp-content/uploads/2017/11/Running-In-Place.gif",
       "workout_group": 4
     }
   }

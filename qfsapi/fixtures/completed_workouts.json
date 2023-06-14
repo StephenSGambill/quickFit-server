@@ -39,7 +39,7 @@
     "model": "qfsapi.completedworkout",
     "pk": 5,
     "fields": {
-      "member": 4,
+      "member": 2,
       "workout": 2,
       "date": "2023-06-02"
     }
