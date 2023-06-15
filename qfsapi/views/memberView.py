@@ -39,22 +39,23 @@ class MemberView(ViewSet):
         Returns:
             Response -- Empty body with 204 status code
         """
-
+        print(request.data)
         member = Member.objects.get(user=pk)
         member.motivation = request.data["motivation"]
-        member.public = request.data["public"]
+        # member.public = request.data["public"]
         member.pic = request.data["pic"]
 
         user = User.objects.get(pk=member.user_id)
-        user.username = request.data["username"]
+        # user.username = request.data["username"]
         user.first_name = request.data["first_name"]
         user.last_name = request.data["last_name"]
-        user.email = request.data["email"]
+        # user.email = request.data["email"]
 
         member.save()
         user.save()
 
-        return Response(None, status=status.HTTP_204_NO_CONTENT)
+        serializer = MemberSerializer(member)
+        return Response(serializer.data)
 
     def destroy(self, request, pk=None):
         """Handle DELETE requests for members

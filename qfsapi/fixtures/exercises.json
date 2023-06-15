@@ -3,9 +3,9 @@
     "model": "qfsapi.exercise",
     "pk": 1,
     "fields": {
-      "name": "Push Ups",
-      "description": "A push-up is a popular bodyweight exercise that primarily targets the upper body muscles, especially the chest, shoulders, and triceps. It also engages the core muscles, including the abs and lower back, as stabilizers.",
-      "gif": "https://media.giphy.com/media/YsxTT1XmQqjxrK7No6/giphy.gif",
+      "name": "Bicep Curls",
+      "description": "Bicep curls with suspension straps engage your core and stabilizer muscles while targeting the biceps. The straps' instability increases the challenge, improves functional strength, and promotes muscle growth by providing constant tension and a greater range of motion.",
+      "gif": "https://media.giphy.com/media/jCBCaAlRav9oDoBexC/giphy.gif",
       "workout_group": 1
     }
   },
@@ -13,9 +13,9 @@
     "model": "qfsapi.exercise",
     "pk": 2,
     "fields": {
-      "name": "Squats",
-      "description": "Exercise 2 description",
-      "gif": "https://thumbs.gfycat.com/BitterFoolishHalcyon-max-1mb.gif",
+      "name": "Chest Fly",
+      "description": "Chest fly with suspension straps targets the chest muscles, shoulders, and arms. The instability of the straps engages the core and stabilizers, enhances muscle coordination and stability, and allows for a deeper stretch and greater muscle activation, making it an effective exercise for chest development.",
+      "gif": "https://media.giphy.com/media/DHG2XCaSQuJLJm0gLU/giphy.gif",
       "workout_group": 2
     }
   },
@@ -23,20 +23,50 @@
     "model": "qfsapi.exercise",
     "pk": 3,
     "fields": {
-      "name": "Burpee",
-      "description": "Exercise 3 description",
-      "gif": "https://media.tenor.com/u2-VJiigKCkAAAAC/exercise-jump.gif",
-      "workout_group": 3
+      "name": "Chest Press",
+      "description": "Chest press with suspension straps targets the chest, shoulders, and triceps while challenging core stability. The instability of the straps engages the core, offers a wider range of motion, and allows for different angles to target specific areas of the chest. It improves balance, coordination, and muscle activation, making it a valuable addition to upper body training.",
+      "gif": "https://media.giphy.com/media/fesMADqKe48eAfP0sB/giphy.gif",
+      "workout_group": 1
     }
   },
   {
     "model": "qfsapi.exercise",
     "pk": 4,
     "fields": {
-      "name": "Running",
-      "description": "Exercise 3 description",
-      "gif": "https://artimg.gympik.com/articles/wp-content/uploads/2017/11/Running-In-Place.gif",
-      "workout_group": 4
+      "name": "Push Up",
+      "description": "Push-ups performed with suspension straps engage the core and stabilizer muscles while targeting the chest, shoulders, and triceps. The instability of the straps adds an extra challenge, improves functional strength, and allows for greater range of motion, leading to increased muscle activation and development.",
+      "gif": "https://media.giphy.com/media/YsxTT1XmQqjxrK7No6/giphy.gif",
+      "workout_group": 1
+    }
+  },
+  {
+    "model": "qfsapi.exercise",
+    "pk": 5,
+    "fields": {
+      "name": "Single Arm Row",
+      "description": "Single arm rows with suspension straps work the back, shoulders, and arms, while also engaging the core for stability. The straps' instability requires greater muscle activation to maintain balance, promoting strength and coordination in the upper body and core muscles.",
+      "gif": "https://media.giphy.com/media/BzitUtl4iIupIJ6iIo/giphy.gif",
+      "workout_group": 1
+    }
+  },
+  {
+    "model": "qfsapi.exercise",
+    "pk": 6,
+    "fields": {
+      "name": "Superman",
+      "description": "Superman exercises with suspension straps primarily target the muscles of the lower back, glutes, and hamstrings. The straps provide an unstable surface, requiring increased core engagement to maintain balance and control throughout the movement. This exercise helps improve posterior chain strength, spinal stability, and overall body control.",
+      "gif": "https://media.giphy.com/media/ywYFYY988LnCOowRwD/giphy.gif",
+      "workout_group": 1
+    }
+  },
+  {
+    "model": "qfsapi.exercise",
+    "pk": 7,
+    "fields": {
+      "name": "Tricep Press",
+      "description": "Tricep extensions using suspension straps focus on the triceps, the muscles on the back of the upper arms. The instability of the straps challenges core stability and forces the triceps to work harder. This exercise allows for a greater range of motion, promoting increased muscle activation and strength development in the triceps.",
+      "gif": "https://media.giphy.com/media/d7Qg1jmVcekK6s5aG7/giphy.gif",
+      "workout_group": 1
     }
   }
 ]
