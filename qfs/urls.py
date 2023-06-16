@@ -6,7 +6,7 @@ The `urlpatterns` list routes URLs to views. For more information please see:
 Examples:
 Function views
     1. Add an import:  from my_app import views
-    2. Add a URL to urlpatterns:  path('', views.home, name='home')
+    2. Add a URL to urlpatterns:  path('', views.home, name='home')`
 Class-based views
     1. Add an import:  from other_app.views import Home
     2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
@@ -18,7 +18,6 @@ from django.contrib import admin
 from django.urls import path
 from django.conf.urls import include
 from qfsapi.views import (
-    MemberView,
     register_user,
     login_user,
     WorkoutView,
@@ -26,16 +25,17 @@ from qfsapi.views import (
     CompletedWorkoutView,
     WorkoutGroupView,
     ProfileView,
+    MembersView,
 )
 from rest_framework import routers
 
 router = routers.DefaultRouter(trailing_slash=False)
-router.register(r"members", MemberView, "member")
 router.register(r"workouts", WorkoutView, "workout")
 router.register(r"exercises", ExerciseView, "exercise")
 router.register(r"completedworkouts", CompletedWorkoutView, "completedworkout")
 router.register(r"workoutgroups", WorkoutGroupView, "workoutgroup")
-
+router.register(r"profile", ProfileView, "profile")
+router.register(r"members", MembersView, "member")
 
 urlpatterns = [
     path("register", register_user),
@@ -46,8 +46,5 @@ urlpatterns = [
         "workouts/complete/<int:pk>",
         WorkoutView.as_view({"post": "complete"}),
         name="complete_workout",
-    ),
-    path(
-        "profile", ProfileView.as_view({"get": "my_profile"}), name="profile-my-profile"
     ),
 ]

@@ -3,7 +3,7 @@
     "model": "qfsapi.completedworkout",
     "pk": 1,
     "fields": {
-      "member": 1,
+      "member": 3,
       "workout": 1,
       "date": "2023-06-01"
     }
@@ -12,7 +12,7 @@
     "model": "qfsapi.completedworkout",
     "pk": 2,
     "fields": {
-      "member": 2,
+      "member": 3,
       "workout": 2,
       "date": "2023-06-02"
     }
@@ -21,14 +21,14 @@
     "model": "qfsapi.completedworkout",
     "pk": 3,
     "fields": {
-      "member": 2,
+      "member": 3,
       "workout": 2,
       "date": "2023-06-02"
     }
   },
   {
     "model": "qfsapi.completedworkout",
-    "pk": 4,
+    "pk": 4,``
     "fields": {
       "member": 1,
       "workout": 1,
