@@ -23,9 +23,9 @@ from qfsapi.views import (
     login_user,
     WorkoutView,
     ExerciseView,
-    CustomWorkoutView,
     CompletedWorkoutView,
     WorkoutGroupView,
+    ProfileView,
 )
 from rest_framework import routers
 
@@ -33,7 +33,6 @@ router = routers.DefaultRouter(trailing_slash=False)
 router.register(r"members", MemberView, "member")
 router.register(r"workouts", WorkoutView, "workout")
 router.register(r"exercises", ExerciseView, "exercise")
-router.register(r"customworkouts", CustomWorkoutView, "customworkout")
 router.register(r"completedworkouts", CompletedWorkoutView, "completedworkout")
 router.register(r"workoutgroups", WorkoutGroupView, "workoutgroup")
 
@@ -47,5 +46,8 @@ urlpatterns = [
         "workouts/complete/<int:pk>",
         WorkoutView.as_view({"post": "complete"}),
         name="complete_workout",
+    ),
+    path(
+        "profile", ProfileView.as_view({"get": "my_profile"}), name="profile-my-profile"
     ),
 ]

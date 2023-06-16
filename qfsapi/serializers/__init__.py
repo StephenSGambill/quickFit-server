@@ -1,6 +1,5 @@
 from .member_serializer import MemberSerializer, MemberUserSerializer
 from .workout_serializer import WorkoutSerializer
 from .exercise_serializer import ExerciseSerializer, NewExerciseSerializer
-from .custom_workout_serializer import CustomWorkoutSerializer
 from .completed_workout_serializer import CompletedWorkoutSerializer
 from .workout_group_serializer import WorkoutGroupSerializer

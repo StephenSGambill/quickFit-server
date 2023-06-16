@@ -6,7 +6,9 @@
       "name": "Upper Body Blast",
       "description": "Description 1",
       "workout_group": 1,
-      "exercises": [1]
+      "exercises": [1],
+      "member": 2,
+      "date": "2023-01-11"
     }
   },
   {
@@ -16,7 +18,9 @@
       "name": "Lower Body Blast",
       "description": "Description 2",
       "workout_group": 2,
-      "exercises": [2]
+      "exercises": [2],
+      "member": 2,
+      "date": "2023-01-11"
     }
   },
   {
@@ -26,7 +30,9 @@
       "name": "Full Body Blast",
       "description": "Description 3",
       "workout_group": 3,
-      "exercises": [1, 2, 3]
+      "exercises": [1, 2, 3],
+      "member": 2,
+      "date": "2023-01-11"
     }
   },
   {
@@ -35,8 +41,10 @@
     "fields": {
       "name": "Cardio Blast",
       "description": "Description 4",
-      "workout_group": 4,
-      "exercises": [4]
+      "workout_group": 1,
+      "exercises": [4],
+      "member": 1,
+      "date": "2023-01-11"
     }
   },
   {
@@ -46,7 +54,9 @@
       "name": "Cardio Strong",
       "description": "Description 5",
       "workout_group": 4,
-      "exercises": [4]
+      "exercises": [4],
+      "member": 1,
+      "date": "2023-01-11"
     }
   }
 ]

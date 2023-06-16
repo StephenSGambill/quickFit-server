@@ -3,11 +3,7 @@ from django.http import HttpResponseServerError
 from rest_framework.viewsets import ViewSet
 from rest_framework.response import Response
 from rest_framework import serializers, status
-from qfsapi.models import (
-    Member,
-    Workout,
-    CompletedWorkout
-)
+from qfsapi.models import Member, Workout, CompletedWorkout
 from django.contrib.auth.models import User
 from qfsapi.serializers import (
     CompletedWorkoutSerializer,
@@ -25,9 +21,8 @@ class CompletedWorkoutView(ViewSet):
             Response -- JSON serialized list of workouts
         """
 
-        custom_workouts = CompletedWorkout.objects.filter(member=request.auth.user.id)
-        serializer = CompletedWorkoutSerializer(custom_workouts, many=True)
-        return Response(serializer.data, status=status.HTTP_200_OK)
+        # serializer = CompletedWorkoutSerializer(custom_workouts, many=True)
+        # return Response(serializer.data, status=status.HTTP_200_OK)
 
     def create(self, request):
         member = Member.objects.get(user=request.auth.user)

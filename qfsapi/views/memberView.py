@@ -6,6 +6,7 @@ from rest_framework import serializers, status
 from qfsapi.models import Member
 from django.contrib.auth.models import User
 from qfsapi.serializers import MemberSerializer
+from rest_framework.decorators import action
 
 
 class MemberView(ViewSet):
