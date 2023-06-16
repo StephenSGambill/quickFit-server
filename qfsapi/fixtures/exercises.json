@@ -16,7 +16,7 @@
       "name": "Chest Fly",
       "description": "Chest fly with suspension straps targets the chest muscles, shoulders, and arms. The instability of the straps engages the core and stabilizers, enhances muscle coordination and stability, and allows for a deeper stretch and greater muscle activation, making it an effective exercise for chest development.",
       "gif": "https://media.giphy.com/media/DHG2XCaSQuJLJm0gLU/giphy.gif",
-      "workout_group": 2
+      "workout_group": 1
     }
   },
   {
@@ -67,6 +67,36 @@
       "description": "Tricep extensions using suspension straps focus on the triceps, the muscles on the back of the upper arms. The instability of the straps challenges core stability and forces the triceps to work harder. This exercise allows for a greater range of motion, promoting increased muscle activation and strength development in the triceps.",
       "gif": "https://media.giphy.com/media/d7Qg1jmVcekK6s5aG7/giphy.gif",
       "workout_group": 1
+    }
+  },
+  {
+    "model": "qfsapi.exercise",
+    "pk": 8,
+    "fields": {
+      "name": "Burpee",
+      "description": "The burpee is a full-body exercise that combines a squat, push-up, and jump. It is a high-intensity exercise that helps to improve cardiovascular fitness, strength, and endurance.",
+      "gif": "https://media1.popsugar-assets.com/files/2014/02/27/847/n/1922729/1baf9ec0f5ce4ea9_burpee.3.gif.xxxlarge.gif",
+      "workout_group": 3
+    }
+  },
+  {
+    "model": "qfsapi.exercise",
+    "pk": 9,
+    "fields": {
+      "name": "Running in Place",
+      "description": "Running in place is a simple aerobic exercise that mimics the motion of running while staying stationary. It is a convenient exercise that can be done indoors and helps to improve cardiovascular endurance.",
+      "gif": "https://j.gifs.com/v1eOgG.gif",
+      "workout_group": 4
+    }
+  },
+  {
+    "model": "qfsapi.exercise",
+    "pk": 10,
+    "fields": {
+      "name": "Air Squat",
+      "description": "The air squat is a bodyweight exercise that targets the muscles in the lower body, including the quadriceps, hamstrings, and glutes. It helps to improve lower body strength, mobility, and overall leg function.",
+      "gif": "https://i0.wp.com/www.strengthlog.com/wp-content/uploads/2023/03/half-air-squats.gif?fit=600%2C600&ssl=1",
+      "workout_group": 2
     }
   }
 ]

@@ -1,5 +1,7 @@
 from rest_framework import serializers
-from qfsapi.models import Workout, WorkoutGroup, Exercise
+from qfsapi.models import Workout, WorkoutGroup, Exercise, Member
+from django.contrib.auth.models import User
+from qfsapi.serializers import MemberSerializer
 
 
 class WorkoutGroupSerializer(serializers.ModelSerializer):
@@ -14,11 +16,20 @@ class WorkoutExerciseSerializer(serializers.ModelSerializer):
         fields = ("id", "name", "description", "gif", "duration", "rest", "iterations")
 
 
+# class WorkoutCreator
+
+# class WorkoutCreatorSerializer(serializers.ModelSerializer):
+#     class Meta:
+#         model = Member
+#         fields = "__all__"
+
+
 class WorkoutSerializer(serializers.ModelSerializer):
     """JSON serializer for members"""
 
     exercises = WorkoutExerciseSerializer(many=True)
+    member = MemberSerializer(many=False)
 
     class Meta:
         model = Workout
-        fields = ("id", "name", "description", "exercises", "workout_group")
+        fields = ("id", "name", "description", "exercises", "workout_group", "member")

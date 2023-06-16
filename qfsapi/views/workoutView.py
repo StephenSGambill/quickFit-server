@@ -47,6 +47,7 @@ class WorkoutView(ViewSet):
                 name=request.data.get("name"),
                 description=request.data.get("description"),
                 workout_group=workout_group,
+                member=Member.objects.get(user_id=request.auth.user),
             )
 
             exercise_ids = request.data.get("exercises", [])

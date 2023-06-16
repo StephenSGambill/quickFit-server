@@ -43,7 +43,7 @@
       "description": "Description 4",
       "workout_group": 1,
       "exercises": [4],
-      "member": 1,
+      "member": 4,
       "date": "2023-01-11"
     }
   },
@@ -55,7 +55,7 @@
       "description": "Description 5",
       "workout_group": 4,
       "exercises": [4],
-      "member": 1,
+      "member": 4,
       "date": "2023-01-11"
     }
   }
