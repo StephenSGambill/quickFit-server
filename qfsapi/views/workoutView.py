@@ -68,7 +68,7 @@ class WorkoutView(ViewSet):
         try:
             workout = Workout.objects.get(pk=pk)
 
-            workout_group_id = request.data.get("workout_group")
+            workout_group_id = int(request.data["workout_group"])
             workout_group = WorkoutGroup.objects.get(id=workout_group_id)
 
             workout.name = request.data["name"]
@@ -76,19 +76,18 @@ class WorkoutView(ViewSet):
             workout.workout_group = workout_group
             workout.save()
 
-            exercise_ids = request.data.get("exercises", [])
+            exercise_data = request.data.get("exercises", [])
+            exercise_ids = [exercise.get("id") for exercise in exercise_data]
             exercises = Exercise.objects.filter(id__in=exercise_ids)
             workout.exercises.set(exercises)
 
-            serializer = WorkoutSerializer(workout)
+            serializer = WorkoutSerializer(workout, data=request.data)
 
-            # figure out validation stuff later
-            # serializer.save()
-
-            # if serializer.is_valid():
-            #     return Response(serializer.data, status=status.HTTP_200_OK)
-
-            return Response(serializer.data, status=status.HTTP_200_OK)
+            if serializer.is_valid():
+                serializer.save()
+                return Response(serializer.data, status=status.HTTP_200_OK)
+            else:
+                return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
         except Workout.DoesNotExist:
             return Response(

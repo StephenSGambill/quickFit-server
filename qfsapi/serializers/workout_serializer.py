@@ -16,14 +16,6 @@ class WorkoutExerciseSerializer(serializers.ModelSerializer):
         fields = ("id", "name", "description", "gif", "duration", "rest", "iterations")
 
 
-# class WorkoutCreator
-
-# class WorkoutCreatorSerializer(serializers.ModelSerializer):
-#     class Meta:
-#         model = Member
-#         fields = "__all__"
-
-
 class WorkoutSerializer(serializers.ModelSerializer):
     """JSON serializer for members"""
 
