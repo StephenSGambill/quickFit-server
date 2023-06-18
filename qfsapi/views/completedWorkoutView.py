@@ -27,7 +27,6 @@ class CompletedWorkoutView(ViewSet):
         return Response(serializer.data, status=status.HTTP_200_OK)
 
     def create(self, request):
-        print(request.data)
         member = Member.objects.get(user=request.auth.user)
         workout = Workout.objects.get(id=request.data["workout"])
 

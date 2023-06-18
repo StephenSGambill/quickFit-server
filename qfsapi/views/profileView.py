@@ -34,7 +34,6 @@ class ProfileView(ViewSet):
         Returns:
             Response -- Empty body with 204 status code
         """
-        print(request)
         user = User.objects.get(id=request.auth.user.id)
         user.first_name = request.data["first_name"]
         user.last_name = request.data["last_name"]

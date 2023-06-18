@@ -71,7 +71,6 @@ class WorkoutView(ViewSet):
 
             workout_group_id = int(request.data["workout_group"])
             workout_group = WorkoutGroup.objects.get(id=workout_group_id)
-            print(workout_group_id)
 
             workout.name = request.data["name"]
             workout.description = request.data["description"]
