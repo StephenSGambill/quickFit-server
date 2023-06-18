@@ -8,6 +8,7 @@ from django.contrib.auth.models import User
 from qfsapi.serializers import (
     WorkoutSerializer,
     CompletedWorkoutSerializer,
+    WorkoutPlainSerializer,
 )
 from rest_framework.decorators import action
 
@@ -70,18 +71,16 @@ class WorkoutView(ViewSet):
 
             workout_group_id = int(request.data["workout_group"])
             workout_group = WorkoutGroup.objects.get(id=workout_group_id)
+            print(workout_group_id)
 
             workout.name = request.data["name"]
             workout.description = request.data["description"]
             workout.workout_group = workout_group
             workout.save()
 
-            exercise_data = request.data.get("exercises", [])
-            exercise_ids = [exercise.get("id") for exercise in exercise_data]
-            exercises = Exercise.objects.filter(id__in=exercise_ids)
-            workout.exercises.set(exercises)
-
-            serializer = WorkoutSerializer(workout, data=request.data)
+            exercise_ids = request.data.get("exercises", [])
+            workout.exercises.set(exercise_ids)
+            serializer = WorkoutPlainSerializer(workout, data=request.data)
 
             if serializer.is_valid():
                 serializer.save()
