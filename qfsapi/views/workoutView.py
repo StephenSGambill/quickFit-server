@@ -47,8 +47,10 @@ class WorkoutView(ViewSet):
 
     def create(self, request):
         """Handle POST requests to create a new workout"""
+
         workout_group_id = request.data.get("workout_group")
         workout_group = WorkoutGroup.objects.get(id=workout_group_id)
+
         try:
             workout = Workout.objects.create(
                 name=request.data.get("name"),
@@ -59,11 +61,20 @@ class WorkoutView(ViewSet):
 
             exercise_ids = request.data.get("exercises", [])
             exercises = Exercise.objects.filter(id__in=exercise_ids)
+
+            for order, exercise_id in enumerate(exercise_ids, start=1):
+                workout_exercise = WorkoutExercise()
+                workout_exercise.workout = workout
+                workout_exercise.exercise = Exercise.objects.get(id=exercise_id)
+                workout_exercise.order = order
+                workout_exercise.save()
+
             workout.exercises.set(exercises)
 
             serializer = WorkoutSerializer(workout)
 
             return Response(serializer.data, status=status.HTTP_201_CREATED)
+
         except WorkoutGroup.DoesNotExist:
             return Response(
                 {"message": "Workout Group not found."},
@@ -72,6 +83,9 @@ class WorkoutView(ViewSet):
 
     def update(self, request, pk=None):
         """Handle PUT requests to update a workout"""
+
+        workout_group_id = request.data.get("workout_group")
+        workout_group = WorkoutGroup.objects.get(id=workout_group_id)
 
         try:
             workout = Workout.objects.get(pk=pk)
@@ -87,6 +101,7 @@ class WorkoutView(ViewSet):
             exercise_ids = request.data.get("exercises", [])
 
             workout_exercises = WorkoutExercise.objects.filter(workout_id=pk)
+
             if workout_exercises.exists():
                 workout_exercises.delete()
 

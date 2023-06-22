@@ -13,9 +13,6 @@ class ExerciseSerializer(serializers.ModelSerializer):
             "description",
             "gif",
             "workout_group",
-            "duration",
-            "rest",
-            "iterations",
         )
         depth = 1
 
@@ -31,8 +28,5 @@ class NewExerciseSerializer(serializers.ModelSerializer):
             "description",
             "gif",
             "workout_group",
-            "duration",
-            "rest",
-            "iterations",
         )
         depth = 1

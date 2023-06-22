@@ -49,9 +49,7 @@ class ExerciseView(ViewSet):
             description=request.data["description"],
             workout_group=workout_group,
             gif=request.data["gif"],
-            duration=request.data["duration"],
-            rest=request.data["rest"],
-            iterations=request.data["iterations"],
+            
         )
         serialized = NewExerciseSerializer(new_exercise, many=False)
         return Response(serialized.data, status=status.HTTP_201_CREATED)
@@ -72,9 +70,7 @@ class ExerciseView(ViewSet):
         updated_exercise.description = request.data["description"]
         updated_exercise.workout_group = workout_group
         updated_exercise.gif = request.data["gif"]
-        # updated_exercise.duration = request.data["duration"]
-        # updated_exercise.rest = request.data["rest"]
-        # updated_exercise.iterations = request.data["iterations"]
+        
 
         updated_exercise.save()
 
