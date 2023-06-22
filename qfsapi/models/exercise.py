@@ -9,6 +9,3 @@ class Exercise(models.Model):
     gif = models.URLField(
         default="https://giphy.com/clips/theoffice-3rS8HpFMbQzQ7p925V"
     )
-    duration = models.IntegerField(default=30)
-    rest = models.IntegerField(default=10)
-    iterations = models.IntegerField(default=3)
