@@ -1,0 +1,11 @@
+[
+  {
+    "model": "qfsapi.workoutexercise",
+    "pk": 1,
+    "fields": {
+      "workout": 1,
+      "exercise": 1,
+      "order": 1
+    }
+  }
+]

@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from qfsapi.models import Workout, WorkoutGroup, Exercise, Member
+from qfsapi.models import Workout, WorkoutGroup, Exercise, Member, WorkoutExercise
 from django.contrib.auth.models import User
 from qfsapi.serializers import MemberSerializer
 
@@ -11,9 +11,12 @@ class WorkoutGroupSerializer(serializers.ModelSerializer):
 
 
 class WorkoutExerciseSerializer(serializers.ModelSerializer):
+    # order = WorkoutExerciseOrderSerializer()
+
     class Meta:
         model = Exercise
-        fields = ("id", "name", "description", "gif")
+        fields = ("id", "name", "description", "gif", "exercise_order")
+        depth = 1
 
 
 class WorkoutSerializer(serializers.ModelSerializer):

@@ -3,7 +3,14 @@ from django.http import HttpResponseServerError
 from rest_framework.viewsets import ViewSet
 from rest_framework.response import Response
 from rest_framework import serializers, status
-from qfsapi.models import Member, Workout, CompletedWorkout, WorkoutGroup, Exercise
+from qfsapi.models import (
+    Member,
+    Workout,
+    CompletedWorkout,
+    WorkoutGroup,
+    Exercise,
+    WorkoutExercise,
+)
 from django.contrib.auth.models import User
 from qfsapi.serializers import (
     WorkoutSerializer,
@@ -42,7 +49,6 @@ class WorkoutView(ViewSet):
         """Handle POST requests to create a new workout"""
         workout_group_id = request.data.get("workout_group")
         workout_group = WorkoutGroup.objects.get(id=workout_group_id)
-
         try:
             workout = Workout.objects.create(
                 name=request.data.get("name"),
@@ -66,6 +72,7 @@ class WorkoutView(ViewSet):
 
     def update(self, request, pk=None):
         """Handle PUT requests to update a workout"""
+
         try:
             workout = Workout.objects.get(pk=pk)
 
@@ -78,7 +85,20 @@ class WorkoutView(ViewSet):
             workout.save()
 
             exercise_ids = request.data.get("exercises", [])
+
+            workout_exercises = WorkoutExercise.objects.filter(workout_id=pk)
+            if workout_exercises.exists():
+                workout_exercises.delete()
+
+            for order, exercise_id in enumerate(exercise_ids, start=1):
+                workout_exercise = WorkoutExercise()
+                workout_exercise.workout = workout
+                workout_exercise.exercise = Exercise.objects.get(id=exercise_id)
+                workout_exercise.order = order
+                workout_exercise.save()
+
             workout.exercises.set(exercise_ids)
+
             serializer = WorkoutPlainSerializer(workout, data=request.data)
 
             if serializer.is_valid():
