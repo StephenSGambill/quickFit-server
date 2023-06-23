@@ -62,7 +62,7 @@ class ExerciseView(ViewSet):
 
         updated_exercise = Exercise.objects.get(pk=pk)
 
-        workout_group_id = int(request.data["workout_group"])
+        workout_group_id = int(request.data["workout_group"]["id"])
         workout_group = WorkoutGroup.objects.get(id=workout_group_id)
 
         updated_exercise.name = request.data["name"]
