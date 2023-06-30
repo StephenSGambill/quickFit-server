@@ -7,5 +7,86 @@
       "exercise": 1,
       "order": 1
     }
+  },
+  {
+    "model": "qfsapi.workoutexercise",
+    "pk": 2,
+    "fields": {
+      "workout": 1,
+      "exercise": 2,
+      "order": 2
+    }
+  },
+  {
+    "model": "qfsapi.workoutexercise",
+    "pk": 3,
+    "fields": {
+      "workout": 1,
+      "exercise": 3,
+      "order": 3
+    }
+  },
+  {
+    "model": "qfsapi.workoutexercise",
+    "pk": 4,
+    "fields": {
+      "workout": 1,
+      "exercise": 4,
+      "order": 4
+    }
+  },
+  {
+    "model": "qfsapi.workoutexercise",
+    "pk": 5,
+    "fields": {
+      "workout": 1,
+      "exercise": 5,
+      "order": 5
+    }
+  },
+  {
+    "model": "qfsapi.workoutexercise",
+    "pk": 6,
+    "fields": {
+      "workout": 1,
+      "exercise": 6,
+      "order": 6
+    }
+  },
+  {
+    "model": "qfsapi.workoutexercise",
+    "pk": 7,
+    "fields": {
+      "workout": 1,
+      "exercise": 7,
+      "order": 7
+    }
+  },
+  {
+    "model": "qfsapi.workoutexercise",
+    "pk": 8,
+    "fields": {
+      "workout": 2,
+      "exercise": 10,
+      "order": 1
+    }
+  },
+  {
+    "model": "qfsapi.workoutexercise",
+    "pk": 9,
+    "fields": {
+      "workout": 3,
+      "exercise": 8,
+      "order": 1
+    }
+  },
+  {
+    "model": "qfsapi.workoutexercise",
+    "pk": 10,
+    "fields": {
+      "workout": 4,
+      "exercise": 9,
+      "order": 1
+    }
   }
 ]

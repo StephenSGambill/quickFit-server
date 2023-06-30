@@ -4,10 +4,46 @@
     "pk": 1,
     "fields": {
       "name": "Upper Body Blast",
-      "description": "Description 1",
+      "description": "To blast that upper body!",
       "workout_group": 1,
-      "exercises": [],
-      "member": 3,
+      "exercises": [1, 2, 3, 4, 5, 6, 7],
+      "member": 1,
+      "date": "2023-01-11"
+    }
+  },
+  {
+    "model": "qfsapi.workout",
+    "pk": 2,
+    "fields": {
+      "name": "Lower Body Blast",
+      "description": "To blast that lower body!",
+      "workout_group": 2,
+      "exercises": [10],
+      "member": 1,
+      "date": "2023-01-11"
+    }
+  },
+  {
+    "model": "qfsapi.workout",
+    "pk": 3,
+    "fields": {
+      "name": "Full Body Blast",
+      "description": "To blast that full body!",
+      "workout_group": 3,
+      "exercises": [8],
+      "member": 1,
+      "date": "2023-01-11"
+    }
+  },
+  {
+    "model": "qfsapi.workout",
+    "pk": 4,
+    "fields": {
+      "name": "Cardio Blast",
+      "description": "To blast that cardio!",
+      "workout_group": 4,
+      "exercises": [9],
+      "member": 1,
       "date": "2023-01-11"
     }
   }
