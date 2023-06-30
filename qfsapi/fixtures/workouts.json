@@ -7,7 +7,7 @@
       "description": "To blast that upper body!",
       "workout_group": 1,
       "exercises": [],
-      "member": 1,
+      "member": "",
       "date": "2023-01-11"
     }
   },
@@ -19,7 +19,7 @@
       "description": "To blast that lower body!",
       "workout_group": 2,
       "exercises": [],
-      "member": 1,
+      "member": "",
       "date": "2023-01-11"
     }
   },
@@ -31,7 +31,7 @@
       "description": "To blast that full body!",
       "workout_group": 3,
       "exercises": [],
-      "member": 1,
+      "member": "",
       "date": "2023-01-11"
     }
   },
@@ -43,7 +43,7 @@
       "description": "To blast that cardio!",
       "workout_group": 4,
       "exercises": [],
-      "member": 1,
+      "member": "",
       "date": "2023-01-11"
     }
   }
