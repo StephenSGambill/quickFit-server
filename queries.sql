@@ -1,6 +1,6 @@
 DELETE FROM auth_user
-WHERE id > 7
+WHERE id =2
 
-DELETE FROM qfsapi_member
-WHERE id > 7
-
+UPDATE auth_user
+SET is_staff = True
+WHERE id = 3
