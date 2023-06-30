@@ -9,6 +9,7 @@ WHERE id = 3
 DELETE FROM qfsapi_workoutexercise;
 DELETE FROM qfsapi_workout;
 DELETE FROM qfsapi_exercise;
+DELETE FROM qfsapi_completedworkout;
 
 
 UPDATE qfsapi_completedworkout
