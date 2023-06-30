@@ -24,3 +24,19 @@ class MembersView(ViewSet):
             return Response(serializer.data)
         except User.DoesNotExist as ex:
             return Response({"message": ex.args[0]}, status=status.HTTP_404_NOT_FOUND)
+
+    def destroy(self, request, pk=None):
+        """Handle GET requests to member profile
+
+        Returns:
+            Response -- JSON serialized member profile
+        """
+
+        try:
+            member = Member.objects.get(pk=pk)
+            member.delete()
+            return Response(status=status.HTTP_204_NO_CONTENT)
+        except Member.DoesNotExist:
+            return Response(
+                {"message": "Member not found"}, status=status.HTTP_404_NOT_FOUND
+            )
