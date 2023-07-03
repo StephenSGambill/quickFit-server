@@ -6,8 +6,8 @@
       "name": "Upper Body Blast",
       "description": "To blast that upper body!",
       "workout_group": 1,
-      "exercises": [],
-      "member": "",
+      "exercises": [2],
+      "member": 1,
       "date": "2023-01-11"
     }
   },
@@ -18,8 +18,8 @@
       "name": "Lower Body Blast",
       "description": "To blast that lower body!",
       "workout_group": 2,
-      "exercises": [],
-      "member": "",
+      "exercises": [2],
+      "member": 1,
       "date": "2023-01-11"
     }
   },
@@ -30,8 +30,8 @@
       "name": "Full Body Blast",
       "description": "To blast that full body!",
       "workout_group": 3,
-      "exercises": [],
-      "member": "",
+      "exercises": [1],
+      "member": 1,
       "date": "2023-01-11"
     }
   },
@@ -42,8 +42,8 @@
       "name": "Cardio Blast",
       "description": "To blast that cardio!",
       "workout_group": 4,
-      "exercises": [],
-      "member": "",
+      "exercises": [1],
+      "member": 1,
       "date": "2023-01-11"
     }
   }
