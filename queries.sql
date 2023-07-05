@@ -11,6 +11,14 @@ DELETE FROM qfsapi_workout;
 DELETE FROM qfsapi_exercise;
 DELETE FROM qfsapi_completedworkout;
 
+DELETE FROM auth_user
+DELETE FROM authtoken_token
+DELETE FROM qfsapi_member
+DELETE FROM qfsapi_completedworkout
+DELETE FROM qfsapi_exercise
+DELETE FROM qfsapi_workoutexercise
+
+
 
 UPDATE qfsapi_completedworkout
 SET member_id = 1
