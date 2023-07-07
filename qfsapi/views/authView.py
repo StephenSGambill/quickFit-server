@@ -29,11 +29,28 @@ def login_user(request):
             "token": token.key,
             "isStaff": authenticated_user.is_staff,
         }
-        return Response(data)
+        response = Response(data)
+        response[
+            "Access-Control-Allow-Origin"
+        ] = "https://king-prawn-app-4ozdj.ondigitalocean.app"
+        response["Access-Control-Allow-Methods"] = "POST"
+        response["Access-Control-Allow-Headers"] = "Content-Type, Authorization"
+        return response
+        # return Response(data)
+
     else:
-        # Bad login details were provided. So we can't log the user in.
         data = {"valid": False}
-        return Response(data)
+        response = Response(data)
+
+        # Set CORS headers
+        response[
+            "Access-Control-Allow-Origin"
+        ] = "https://king-prawn-app-4ozdj.ondigitalocean.app"
+        response["Access-Control-Allow-Methods"] = "POST"
+        response["Access-Control-Allow-Headers"] = "Content-Type, Authorization"
+
+        return response
+        # return Response(data)
 
 
 @api_view(["POST"])

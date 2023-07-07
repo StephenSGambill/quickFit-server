@@ -14,9 +14,11 @@ DELETE FROM qfsapi_completedworkout;
 DELETE FROM auth_user
 DELETE FROM authtoken_token
 DELETE FROM qfsapi_member
+
 DELETE FROM qfsapi_completedworkout
 DELETE FROM qfsapi_exercise
 DELETE FROM qfsapi_workoutexercise
+DELETE FROM qfsapi_workout
 
 
 
